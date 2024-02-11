@@ -17,7 +17,7 @@ export async function POST(request: Request) {
   const supabase = createClient(cookieStore)
 
   const body = await request.json()
-  
+
   const { data, error } = await supabase
     .from('posts')
     .insert([{ name: body.name, moo_count: body.mooCount }])

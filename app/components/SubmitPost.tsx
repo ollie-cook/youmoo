@@ -2,11 +2,14 @@
 
 import { useState } from "react"
 import { Slider } from "@/components/ui/slider"
+import { useRouter } from "next/navigation"
 
 export default function SubmitPost() {
   const [name, setName] = useState("")
   const [mooCount, setMooCount] = useState(1)
   const [loading, setLoading] = useState(false)
+
+  const router = useRouter()
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -22,11 +25,12 @@ export default function SubmitPost() {
       .then(res => res.json)
     } finally {
       setLoading(false)
+      router.refresh()
     }
   }
 
   return (
-    <div className="w-1/3 mt-8 py-2 px-4 bg-blue-400">
+    <div className="w-full mt-8 py-2 px-4 bg-blue-400">
       <p className="text-xl">Send a moo</p>
       <form className="flex flex-col items-start" onSubmit={handleSubmit}>
         <label htmlFor="name">Name</label>
