@@ -48,7 +48,7 @@ export default function SubmitPost() {
           <form className="flex flex-col items-start m-4" onSubmit={handleSubmit}>
             <label htmlFor="name">Name</label>
             <input type="text" id="name" value={name} onChange={(e) => setName(e.target.value)} className="border border-black rounded-sm pl-1" />
-            <label htmlFor="moo-count" className="mt-4">How many 'o's would you like in your moo?</label>
+            <label htmlFor="moo-count" className="mt-4">How many &apos;o&apos;s would you like in your moo?</label>
             <div id="moo-count" className="w-full">
               <div className="flex w-1/2 justify-between mt-1">
                 <p className="text-xs">2</p>
@@ -70,7 +70,7 @@ export default function SubmitPost() {
             <div className="w-full mt-8 " style={{overflowWrap: "break-word"}}>
               <p className=" w-full text-sm" style={{overflowWrap: "break-word"}}>Preview:</p>
               <div className="w-full mb-2 p-2 bg-amber-300 rounded-lg border-2 border-amber-200">
-                <p className="text-wrap" >{name || "Anonymous"}&nbsp;&nbsp;<span className="text-xs">2h ago</span></p>
+                <p className="text-wrap" >{name || "Anonymous"}&nbsp;&nbsp;<span className="text-xs">1 minute ago</span></p>
                 <p className={`text-xl ${myFont.className}`} style={{overflowWrap: "break-word"}}>{"m" + "o".repeat(mooCount) + (exclamationMark == true ? "!" : "")}</p>
               </div>
             </div>

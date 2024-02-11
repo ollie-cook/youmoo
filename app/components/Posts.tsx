@@ -8,9 +8,11 @@ export default async function Posts() {
     <div className="mt-4">
       <h1>Recent Posts</h1>
       {
-        posts?.map(post => (
-          <Post post={post} />
-        ))
+        posts?.map(post => {
+          const guid = crypto.randomUUID()
+          return (
+          <Post post={post} key={guid}/>
+        )})
       }
     </div>
   )
