@@ -40,7 +40,7 @@ export default function SubmitPost() {
   }
 
   return (
-    <div className="w-full mt-8 py-2 px-4 rounded-lg bg-[#bed26f] border-2 border-[#ddeba2]">
+    <div className="w-full mt-4 lg:mt-8 py-2 px-4 rounded-lg bg-[#bed26f] border-2 border-[#ddeba2]">
       {
         submitted == false ? 
         <>
