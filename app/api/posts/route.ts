@@ -20,7 +20,7 @@ export async function POST(request: Request) {
 
   const { data, error } = await supabase
     .from('posts')
-    .insert([{ name: body.name, moo_count: body.mooCount }])
+    .insert([{ name: body.name, moo_count: body.mooCount, include_exclamation: body.exclamationMark }])
 
   return Response.json(data)
 }

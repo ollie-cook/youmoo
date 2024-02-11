@@ -1,14 +1,6 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import localFont from 'next/font/local';
 import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
-
-const myFont = localFont({
-  src: './fonts/ProtestRiot-Regular.ttf',
-  display: 'swap',
-})
+import { robotoSlab } from "./fonts/fonts";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -22,8 +14,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={myFont.className}>
+      <body className={robotoSlab.className}>
         {children}
+        <img src="/background.jpg" alt="background" className="fixed inset-0 w-full h-full object-cover z-0" />
       </body>
     </html>
   );

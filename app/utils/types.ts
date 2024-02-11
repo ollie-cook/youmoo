@@ -3,4 +3,5 @@ export type Post = {
   created_at?: string
   name: string
   moo_count: number
+  include_exclamation: boolean
 }
