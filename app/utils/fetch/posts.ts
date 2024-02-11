@@ -8,6 +8,7 @@ export async function getPosts() {
   let { data: posts, error } = await supabase
     .from('posts')
     .select('*')
+    .order('created_at', { ascending: false })
 
   return posts
 }
