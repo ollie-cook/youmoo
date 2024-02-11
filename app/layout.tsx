@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { robotoSlab } from "./fonts/fonts";
+import { Analytics } from '@vercel/analytics/react';
 
 export const metadata: Metadata = {
   title: "YouMoo",
@@ -17,6 +18,7 @@ export default function RootLayout({
       <body className={robotoSlab.className}>
         {children}
         <img src="/background.jpg" alt="background" className="fixed inset-0 w-full h-full object-cover z-0" />
+        <Analytics />
       </body>
     </html>
   );
